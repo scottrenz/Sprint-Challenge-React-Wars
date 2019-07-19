@@ -3,14 +3,11 @@ import {Expl,Ahref} from './cards'
 
 const Tag = props => {
     return (  
-!(props.dat < 'httpx' && props.dat > 'https')
+(props.dat.substring(0,8) ===  'https://')
 ?
-<Expl>{props.dat}</Expl>
-:
 <Ahref href={props.dat} alt={'Star Wars Character'}>{props.dat}</Ahref>
-
-         )
-
+:
+<Expl>{props.dat}</Expl>)
 }
 
 export default Tag

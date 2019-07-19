@@ -28,6 +28,7 @@ const App = () => {
      }
   )
     .catch (data => { 
+      console.log('data error 1',data)
             }
              )
             }, []);
@@ -40,7 +41,8 @@ const App = () => {
                }
             )
               .catch (data => { 
-                      }
+                console.log('data error 2',data)
+              }
                        )
                       }, []);
 
@@ -52,7 +54,8 @@ const App = () => {
                          }
                       )
                         .catch (data => { 
-                                }
+                          console.log('data error 3',data)
+                        }
                                  )
                                 }, []);
 
@@ -64,7 +67,8 @@ const App = () => {
                                    }
                                 )
                                   .catch (data => { 
-                                          }
+                                    console.log('data error 4',data)
+                                  }
                                            )
                                           }, []);
 
@@ -76,7 +80,8 @@ const App = () => {
                                              }
                                           )
                                             .catch (data => { 
-                                                    }
+                                              console.log('data error 5',data)
+                                            }
                                                      )
                                                     }, []);
 
@@ -88,7 +93,8 @@ const App = () => {
                                                        }
                                                     )
                                                       .catch (data => { 
-                                                              }
+                                                        console.log('data error 6',data)
+                                                      }
                                                                )
                                                               }, []);
 
@@ -100,7 +106,8 @@ const App = () => {
                                                                  }
                                                               )
                                                                 .catch (data => { 
-                                                                        }
+                                                                  console.log('data error 7',data)
+                                                                }
                                                                          )
                                                                         }, []);
 
@@ -112,7 +119,8 @@ const App = () => {
                                                                            }
                                                                         )
                                                                           .catch (data => { 
-                                                                                  }
+                                                                            console.log('data error 8',data)
+                                                                          }
                                                                                    )
                                                                                   }, []);
 
@@ -124,7 +132,8 @@ const App = () => {
                                                                                      }
                                                                                   )
                                                                                     .catch (data => { 
-                                                                                            }
+                                                                                      console.log('data error 9',data)
+                                                                                    }
                                                                                              )
                                                                                             }, []);
 
