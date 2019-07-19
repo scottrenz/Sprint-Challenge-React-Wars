@@ -1,6 +1,6 @@
 import React from "react"
 // import styled from 'styled-components'
-import {Expl} from './cards'
+import {Expl,Ahref} from './cards'
 // const Img = styled.img`
 
 //   display: flex;
@@ -14,7 +14,7 @@ const Tag = props => {
 ?
 <Expl>{props.dat}</Expl>
 :
-<a href={props.dat} alt={'Star Wars Character'}>{props.dat}</a>
+<Ahref href={props.dat} alt={'Star Wars Character'}>{props.dat}</Ahref>
 
          )
         //   <button

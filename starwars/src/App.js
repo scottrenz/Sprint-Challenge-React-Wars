@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from 'axios'
 import './App.css';
 import Cards from './cards'
+import {H1Style,H2Style} from './cards'
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -213,9 +214,9 @@ for (let i=0;i<imgData9.length;i++)
   return (
     
     <div className="App">
-      <h1 className="Header">React Wars</h1>
-      <h2 className="Header">War Particpants</h2>
-      <h2 className="Header">Name: Birth Year: Profile Link:</h2>
+<H1Style className="Header">React Wars</H1Style>
+      <H2Style className="Header">War Particpants</H2Style>
+      <H2Style className="Header">Name: Birth Year: Profile Link:</H2Style>
 <Cards data={data} ></Cards>
     </div>
   );
