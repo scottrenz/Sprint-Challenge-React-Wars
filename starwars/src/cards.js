@@ -28,13 +28,12 @@ export const H1Style = styled.h1`
 font-family: 'Roboto', sans-serif;
 
 justifyContent: center;
-margin: 2x  0px;
+margin: 20px;
 
 `;
 
 export const H2Style = styled.h2`
 font-family: 'Bangers', cursive;
-x
 justifyContent: center;
 margin: 10px;
 

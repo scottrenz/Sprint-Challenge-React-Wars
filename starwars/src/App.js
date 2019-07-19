@@ -188,7 +188,7 @@ for (let i=0;i<imgData9.length;i++)
     <div className="App">
 <H1Style className="Header">React Wars</H1Style>
       <H2Style className="Header">War Particpants</H2Style>
-      <H2Style className="Header">Name: Birth Year: Profile Link:</H2Style>x
+      <H2Style className="Header">Name: Birth Year: Profile Link:</H2Style>
 <Cards data={data} ></Cards>
     </div>
   );
