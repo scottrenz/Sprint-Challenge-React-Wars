@@ -28,7 +28,19 @@ export const Ahref = styled.a`
     margin-right: 40%;
       `;
     
-    export const Style = styled.div`
+  
+      export const Pro = styled.div`
+      font-family: 'Indie Flower', cursive;
+      border-left: 5px solid brown;
+      border-right: 5px solid brown;
+      border-bottom: 2.5px solid brown;
+      min-width: 200px;  
+      justifyContent: center;
+      margin-left: 40%;
+      margin-right: 40%;
+        `;
+      
+      export const Style = styled.div`
 
 display: flex;
 marginTop: 10px;

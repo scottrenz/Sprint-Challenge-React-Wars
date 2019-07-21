@@ -1,11 +1,11 @@
 import React from "react"
-import {Nam,Bir,Ahref} from './cards'
+import {Nam,Bir,Ahref,Pro} from './cards'
 
 const Tag = props => {
     return (  
 (props.dat.substring(0,8) ===  'https://')
 ?
-<Bir><Ahref href={props.dat} alt={'Star Wars Character'}>{props.dat}</Ahref></Bir>
+<Pro><Ahref href={props.dat} alt={'Star Wars Character'}>{props.dat}</Ahref></Pro>
 :
 (
 (props.ix % 3 === 0)
