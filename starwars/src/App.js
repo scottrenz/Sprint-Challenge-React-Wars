@@ -19,179 +19,43 @@ const App = () => {
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-
+  
+  function g(page) {
+    return axios.get('https://swapi.co/api/people/?page=' + page)
+  }
+  
   useEffect(() => {
-    axios.get('https://swapi.co/api/people/?page=1')
-    .then (data =>   
+    axios.all([g(1), g(2), g(3), g(4), g(5), g(6), g(7), g(8), g(9)])
+      .then(axios.spread(function (data1,data2,data3,data4,data5,data6,data7,data8,data9)
       {
-        setData1(data.data.results) 
+        setData1(data1.data.results) 
+        setData2(data2.data.results) 
+        setData3(data3.data.results) 
+        setData4(data4.data.results) 
+        setData5(data5.data.results) 
+        setData6(data6.data.results) 
+        setData7(data7.data.results) 
+        setData8(data8.data.results) 
+        setData9(data9.data.results) 
      }
-  )
+  ))
     .catch (data => { 
       console.log('data error 1',data)
             }
              )
             }, []);
-
-            useEffect(() => {
-              axios.get('https://swapi.co/api/people/?page=2')
-              .then (data =>   
-                {
-                  setData2(data.data.results) 
-               }
-            )
-              .catch (data => { 
-                console.log('data error 2',data)
-              }
-                       )
-                      }, []);
-
-                      useEffect(() => {
-                        axios.get('https://swapi.co/api/people/?page=3')
-                        .then (data =>   
-                          {
-                            setData3(data.data.results) 
-                         }
-                      )
-                        .catch (data => { 
-                          console.log('data error 3',data)
-                        }
-                                 )
-                                }, []);
-
-                                useEffect(() => {
-                                  axios.get('https://swapi.co/api/people/?page=4')
-                                  .then (data =>   
-                                    {
-                                      setData4(data.data.results) 
-                                   }
-                                )
-                                  .catch (data => { 
-                                    console.log('data error 4',data)
-                                  }
-                                           )
-                                          }, []);
-
-                                          useEffect(() => {
-                                            axios.get('https://swapi.co/api/people/?page=5')
-                                            .then (data =>   
-                                              {
-                                                setData5(data.data.results) 
-                                             }
-                                          )
-                                            .catch (data => { 
-                                              console.log('data error 5',data)
-                                            }
-                                                     )
-                                                    }, []);
-
-                                                    useEffect(() => {
-                                                      axios.get('https://swapi.co/api/people/?page=6')
-                                                      .then (data =>   
-                                                        {
-                                                          setData6(data.data.results) 
-                                                       }
-                                                    )
-                                                      .catch (data => { 
-                                                        console.log('data error 6',data)
-                                                      }
-                                                               )
-                                                              }, []);
-
-                                                              useEffect(() => {
-                                                                axios.get('https://swapi.co/api/people/?page=7')
-                                                                .then (data =>   
-                                                                  {
-                                                                    setData7(data.data.results) 
-                                                                 }
-                                                              )
-                                                                .catch (data => { 
-                                                                  console.log('data error 7',data)
-                                                                }
-                                                                         )
-                                                                        }, []);
-
-                                                                        useEffect(() => {
-                                                                          axios.get('https://swapi.co/api/people/?page=8')
-                                                                          .then (data =>   
-                                                                            {
-                                                                              setData8(data.data.results) 
-                                                                           }
-                                                                        )
-                                                                          .catch (data => { 
-                                                                            console.log('data error 8',data)
-                                                                          }
-                                                                                   )
-                                                                                  }, []);
-
-                                                                                  useEffect(() => {
-                                                                                    axios.get('https://swapi.co/api/people/?page=9')
-                                                                                    .then (data =>   
-                                                                                      {
-                                                                                        setData9(data.data.results) 
-                                                                                     }
-                                                                                  )
-                                                                                    .catch (data => { 
-                                                                                      console.log('data error 9',data)
-                                                                                    }
-                                                                                             )
-                                                                                            }, []);
-
+let darr = [imgData1,imgData2,imgData3,imgData4,imgData5,imgData6,imgData7,imgData8,imgData9]
             let data=[];
-for (let i=0;i<imgData1.length;i++)
+for (let j=0;j<darr.length;j++)            
 {
-  data[(3*i)] = imgData1[i].name;
-  data[(3*i)+1] = imgData1[i].birth_year;
-  data[(3*i)+2] = imgData1[i].url;
-}
-for (let i=0;i<imgData2.length;i++)
+  for (let i=0;i<darr[j].length;i++)
 {
-  data[(3*i)+30] = imgData2[i].name;
-  data[(3*i)+31] = imgData2[i].birth_year;
-  data[(3*i)+32] = imgData2[i].url;
+  data[(3*(i*(j+1)))+(30*(i+1)*j) + 0] = darr[j][i].name;
+  data[(3*(i*(j+1)))+(30*(i+1)*j) + 1] = darr[j][i].birth_year;
+  data[(3*(i*(j+1)))+(30*(i+1)*j) + 2] = darr[j][i].url;
 }
-for (let i=0;i<imgData3.length;i++)
-{
-  data[(3*i)+60] = imgData3[i].name;
-  data[(3*i)+61] = imgData3[i].birth_year;
-  data[(3*i)+62] = imgData3[i].url;
 }
-for (let i=0;i<imgData4.length;i++)
-{
-  data[(3*i)+90] = imgData4[i].name;
-  data[(3*i)+91] = imgData4[i].birth_year;
-  data[(3*i)+92] = imgData4[i].url;
-}
-for (let i=0;i<imgData5.length;i++)
-{
-  data[(3*i)+120] = imgData5[i].name;
-  data[(3*i)+121] = imgData5[i].birth_year;
-  data[(3*i)+122] = imgData5[i].url;
-}
-for (let i=0;i<imgData6.length;i++)
-{
-  data[(3*i)+150] = imgData6[i].name;
-  data[(3*i)+151] = imgData6[i].birth_year;
-  data[(3*i)+152] = imgData6[i].url;
-}
-for (let i=0;i<imgData7.length;i++)
-{
-  data[(3*i)+180] = imgData7[i].name;
-  data[(3*i)+181] = imgData7[i].birth_year;
-  data[(3*i)+182] = imgData7[i].url;
-}
-for (let i=0;i<imgData8.length;i++)
-{
-  data[(3*i)+210] = imgData8[i].name;
-  data[(3*i)+211] = imgData8[i].birth_year;
-  data[(3*i)+212] = imgData8[i].url;
-}
-for (let i=0;i<imgData9.length;i++)
-{
-  data[(3*i)+240] = imgData9[i].name;
-  data[(3*i)+241] = imgData9[i].birth_year;
-  data[(3*i)+242] = imgData9[i].url;
-}
+
   return (
     
     <div className="App">
