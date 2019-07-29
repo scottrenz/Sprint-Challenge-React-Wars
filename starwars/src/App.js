@@ -46,16 +46,19 @@ const App = () => {
             }, []);
 let darr = [imgData1,imgData2,imgData3,imgData4,imgData5,imgData6,imgData7,imgData8,imgData9]
             let data=[];
+            let n=0
 for (let j=0;j<darr.length;j++)            
 {
   for (let i=0;i<darr[j].length;i++)
 {
-  data[(3*(i*(j+1)))+(30*(i+1)*j) + 0] = darr[j][i].name;
-  data[(3*(i*(j+1)))+(30*(i+1)*j) + 1] = darr[j][i].birth_year;
-  data[(3*(i*(j+1)))+(30*(i+1)*j) + 2] = darr[j][i].url;
+  data[n] = ((n + 3) / 3 ) + ' ' + darr[j][i].name;
+  n=n+1
+  data[n] = darr[j][i].birth_year;
+  n=n+1
+  data[n] = darr[j][i].url;
+  n=n+1
 }
 }
-
   return (
     
     <div className="App">
